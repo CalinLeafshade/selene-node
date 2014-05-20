@@ -1,0 +1,70 @@
+radius = 70px
+bg = #3B4757
+moon = #c7cbd0
+crater = #737277
+crater1 = radius / 2
+crater2 = radius / 4
+crater3 = radius / 8
+
+crater-shadow(scale)
+	box-shadow inset (scale * radius / 100 * 3) (scale * -1 * radius / 100) 0 0px darken(crater, 20%);
+
+.moon 
+	//position: absolute;
+	//left: 50%;
+	//top: 50%;
+	//margin: -1 * radius;
+	width: radius * 2;
+	height: radius * 2;
+	background: moon;
+	border-radius: 50%;
+	box-shadow: inset (-1 * radius / 4) 0px 0 0px darken(moon, 20%);
+	-webkit-backface-visibility: hidden;
+	li 
+		position: absolute;
+		list-style: none;
+		background: crater;
+		border-radius: 50%;
+		&:nth-child(1)
+			left (radius / 4);
+			top (radius / 5) * 3;
+			width crater1;
+			height crater1;
+			crater-shadow(2);
+		&:nth-child(2)
+			left: (radius / 2) * 3;
+			top: (radius / 2);
+			width: crater2;
+			height: crater2;
+			crater-shadow(1);
+		&:nth-child(3)
+			left: radius;
+			top: (radius / 2) * 3;
+			width: crater2;
+			height: crater2;
+			crater-shadow(1);
+		&:nth-child(4) 
+			left: (radius / 2);
+			top: (radius / 2) * 3;
+			width: crater3;
+			height: crater3;
+			crater-shadow(0.8);
+		&:nth-child(5) 
+			left: (radius * 7 / 8);
+			top: (radius / 6);
+			width: crater3;
+			height: crater3;
+			crater-shadow(0.8);
+		&:nth-child(6) 
+			left: radius * (8 / 7);
+			top: radius * (4 / 5);
+			width: crater3;
+			height: crater3;
+			crater-shadow(0.8);
+		&:nth-child(7)
+			left: radius * (20 / 11);
+			top: radius;
+			width: crater3;
+			height: crater3;
+			crater-shadow(0.8);
+

@@ -1,0 +1,63 @@
+.moon {
+  width: 140px;
+  height: 140px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -17.5px 0px 0 0px #9ba2ab;
+  -webkit-backface-visibility: hidden;
+}
+.moon li {
+  position: absolute;
+  list-style: none;
+  background: #737277;
+  border-radius: 50%;
+}
+.moon li:nth-child(1) {
+  left: 17.5px;
+  top: 42px;
+  width: 35px;
+  height: 35px;
+  box-shadow: inset 4.199999999999999px -1.4px 0 0px #5c5b5f;
+}
+.moon li:nth-child(2) {
+  left: 105px;
+  top: 35px;
+  width: 17.5px;
+  height: 17.5px;
+  box-shadow: inset 2.1px -0.7px 0 0px #5c5b5f;
+}
+.moon li:nth-child(3) {
+  left: 70px;
+  top: 105px;
+  width: 17.5px;
+  height: 17.5px;
+  box-shadow: inset 2.1px -0.7px 0 0px #5c5b5f;
+}
+.moon li:nth-child(4) {
+  left: 35px;
+  top: 105px;
+  width: 8.75px;
+  height: 8.75px;
+  box-shadow: inset 1.68px -0.56px 0 0px #5c5b5f;
+}
+.moon li:nth-child(5) {
+  left: 61.25px;
+  top: 11.666666666666666px;
+  width: 8.75px;
+  height: 8.75px;
+  box-shadow: inset 1.68px -0.56px 0 0px #5c5b5f;
+}
+.moon li:nth-child(6) {
+  left: 80.00000000000001px;
+  top: 56px;
+  width: 8.75px;
+  height: 8.75px;
+  box-shadow: inset 1.68px -0.56px 0 0px #5c5b5f;
+}
+.moon li:nth-child(7) {
+  left: 127.27272727272725px;
+  top: 70px;
+  width: 8.75px;
+  height: 8.75px;
+  box-shadow: inset 1.68px -0.56px 0 0px #5c5b5f;
+}

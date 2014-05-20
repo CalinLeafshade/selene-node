@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    - each date in dates
+        p
+            a.text(href='/log/' + date._id)
+                =new Date(date._id).toDateString()
+

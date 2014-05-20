@@ -1,0 +1,45 @@
+extends layout
+
+
+block content
+    table.log
+        - function formatTime(date) {
+        -   var hours = date.getHours();
+        -   var minutes = date.getMinutes();
+        -   hours = hours < 10 ? "0" + hours : hours;
+        -   minutes = minutes < 10 ? "0" + minutes : minutes;
+        -   return hours + ":" + minutes;
+        - }
+        - colors = [];
+        - for (var i = 0; i < 32; i++) {  colors.push('rgb(' + Math.floor(Math.random() * 200) + "," + Math.floor(Math.random() * 200) + "," + Math.floor(Math.random() * 200) + ")"); }
+        - users = [];
+        tbody
+            - each entry in entries
+                - var index = users.indexOf(entry.nick);
+                - if (index  == -1) {
+                -   users.push(entry.nick);
+                -   index = users.indexOf(entry.nick);
+                - }
+                - var color = colors[index] || "#000";
+                - var time = formatTime(entry.date);
+                tr(id = "t" + time)
+                    - if (entry.type == "message" || entry.type == null) {
+                        td.nick(style = "background-color: " + color)
+                            =entry.nick
+                        td.text(style = "color: " + color)
+                            !=entry.formattedText
+                    - } else if (entry.type == "join") {
+                        td.join(colspan=2)
+                            ="=== " + entry.nick + " joined."
+                    - } else if (entry.type == "quit") {
+                        td.quit(colspan=2)
+                            ="=== " + entry.nick + " quit."
+                    - } else if (entry.type == "action") {
+                        td.action(colspan=2)
+                            ="* " + entry.formattedText
+                    - }
+                    td.time
+                        a(href= "#t" + time)
+                            ="[" + time + "]"
+                    
+
